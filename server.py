@@ -10,7 +10,6 @@ from flask import (
     flash,
 )
 
-# from flask_oauth import OAuth
 from spotipy import Spotify, CacheHandler
 from spotipy.oauth2 import SpotifyOAuth
 
@@ -40,22 +39,6 @@ oauth_manager = SpotifyOAuth(
     scope="user-read-email playlist-read-private playlist-read-collaborative",
     cache_handler=CacheSessionHandler(session, "spotify_token"),
 )
-
-
-# oauth = OAuth()
-# spotify_app = oauth.remote_app(
-#     "spotify",
-#     consumer_key=SPOITFY_CLIENT_ID,
-#     consumer_secret=SPOTIFY_CLIENT_SECRET,
-#     request_token_url=None,
-#     access_token_url="https://accounts.spotify.com/api/token",
-#     authorize_url="https://accounts.spotify.com/authorize",
-#     request_token_params={
-#         "response_type": "code",
-#         "scope": "user-read-email playlist-read-private playlist-read-collaborative",
-#     },
-#     access_token_method="POST",
-# )
 
 
 @app.route("/")
